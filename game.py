@@ -281,7 +281,7 @@ while running:
         for obj in falling_objects[:]:
             obj[1] += fall_speed
             pygame.draw.circle(screen, obj[2], (obj[0] + object_radius, obj[1] + object_radius), object_radius)
-            if basket_x < obj[0] < basket_x + basket_width and basket_y < obj[1] < basket_y + basket_height:
+            if basket.rect.x < obj[0] < basket.rect.x + basket_width and basket.rect.y < obj[1] < basket.rect.y + basket_height:
                 if obj[3] == "green":
                     score += 1
                 elif obj[3] == "gold" and difficulty_settings[difficulty]["shield_enabled"]:
